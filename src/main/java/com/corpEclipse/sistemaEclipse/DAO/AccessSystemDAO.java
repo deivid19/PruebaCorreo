@@ -18,4 +18,5 @@ import java.util.List;
 public interface AccessSystemDAO {
     public Usuario validaAcceso(String user, String password);
     public Usuario obtenerUsuario(String id);
+    public boolean getCorreo();
 }

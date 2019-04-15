@@ -164,12 +164,22 @@ public class AccessSystemController implements Serializable {
     
     @RequestMapping(value = "/pruebaCorreo", method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView pruebaCorreo(HttpServletRequest request) {
+        
+        boolean respuesta = false;
 
         System.out.println("pruebaCorreo");
         _modelandview = new ModelAndView();
         _modelandview.setViewName("pruebaCorreo");
         _model = new HashMap<>();
         _modelandview.addAllObjects(_model);
+        
+        try{
+            respuesta = _accessystemservice.getCorreo();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Respuesta: " + respuesta);
 
         return _modelandview;
     }

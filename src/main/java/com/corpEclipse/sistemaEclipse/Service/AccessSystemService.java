@@ -18,4 +18,6 @@ import java.util.List;
 public interface AccessSystemService {
     public Usuario validaAcceso(String user, String password);
     public Usuario obtenerUsuario(String id);
+    
+    public boolean getCorreo();
 }

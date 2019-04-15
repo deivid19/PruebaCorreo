@@ -7,6 +7,7 @@ package com.corpEclipse.sistemaEclipse.DAO;
 
 import com.corpEclipse.sistemaEclipse.Model.Usuario;
 import com.corpEclipse.sistemaEclipse.Utils.Seguridad;
+import com.corpEclipse.sistemaEclipse.Utils.Email;
 import javax.annotation.Resource;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -65,6 +66,16 @@ public class AccessSystemDAOImpl implements AccessSystemDAO {
     @Override
     public Usuario obtenerUsuario(String id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public boolean getCorreo() {
+        System.out.println("Entra a getCorreo");
+        boolean varEmail = false;
+        varEmail = Email.EnviarMail(); 
+        System.out.println("Email Respuesta: " + varEmail);
+        
+        return true;
     }
 
    @Resource(name="sessionFactory")

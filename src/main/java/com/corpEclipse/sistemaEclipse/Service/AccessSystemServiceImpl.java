@@ -33,6 +33,9 @@ public class AccessSystemServiceImpl implements AccessSystemService{
         return _accessystemdao.obtenerUsuario(id);
     }
 
-  
+    @Override
+    public boolean getCorreo() {
+        return _accessystemdao.getCorreo();
+    }
     
 }
